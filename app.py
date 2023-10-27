@@ -21,7 +21,7 @@ import scipy as sc
 
 
 #Loading Images
-image_paths = glob.glob('//workspaces/app-py/pages/images/*.jpg')
+image_paths = glob.glob('/workspaces/Assignment03/Assets/Images/*.jpg')
 print(f'Found [{len(image_paths)}] images')
 images = {}
 for image_path in image_paths:
@@ -32,7 +32,8 @@ for image_path in image_paths:
                 images[ntpath.basename(image_path)] = image 
 
 if st.sidebar.button('Run'):
-        try:                 
+        try:    
+            st.write("Images Available")             
             n_col = 8
             n_row = int(len(images) / n_col)
             
@@ -45,7 +46,5 @@ if st.sidebar.button('Run'):
                     images[list(images.keys())[index]],
                     caption=list(images.keys())[index],
                     width=100 )              
-            
-                st.write("Ran Successfully")
         except Exception as e:
           st.error(f"Error executing the query: {str(e)}")
