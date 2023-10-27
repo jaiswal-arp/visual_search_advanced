@@ -6,7 +6,7 @@ streamlit
 tensorflow
 matplotlib
 opencv-python-headless
-sklearn
-sklearn.metrics.pairwise
+scikit-learn
 scipy
 tqdm
+tensorflow
