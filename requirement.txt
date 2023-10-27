@@ -1,0 +1,12 @@
+altair
+numpy
+pandas
+pydeck
+streamlit
+tensorflow
+matplotlib
+opencv-python-headless
+sklearn
+sklearn.metrics.pairwise
+scipy
+tqdm
