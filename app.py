@@ -1,9 +1,5 @@
 import streamlit as st
-
-import tensorflow as tf
-from tensorflow.keras.applications.vgg19 import preprocess_input
-from tensorflow.keras.models import Model
-print(tf.__version__)
+import pickle
 
 import matplotlib.pyplot as plt
 plt.rcParams.update({'pdf.fonttype': 'truetype'})
@@ -33,6 +29,9 @@ for image_path in image_paths:
     image = cv2.resize(image, (200, 200))
     images[ntpath.basename(image_path)] = image      
 
+# Load the style embeddings from the pickle file
+with open('style_embeddings.pkl', 'rb') as file:
+    image_style_embeddings = pickle.load(file)
 
 if st.sidebar.button('Run'):
         try:    
@@ -56,7 +55,7 @@ if st.sidebar.button('Generate'):
 # Visualize the 2D-projection of the embedding space with example images (thumbnails)
 #
 
-    
+    try: 
       def embedding_plot(X, images, thumbnail_sparsity = 0.005, thumbnail_size = 0.3):
           x_min, x_max = np.min(X, axis=0), np.max(X, axis=0)
           X = (X - x_min) / (x_max - x_min)
@@ -89,12 +88,8 @@ if st.sidebar.button('Generate'):
 
 if st.sidebar.button('Search in Embedding Space'):
     try: 
-       
-    
-            #st.write(image_style_embeddings)
             st.write("Images below are matched Using the reference style/image")             
             def search_by_style(image_style_embeddings, images, reference_image, max_results=10):
-                print(image_style_embeddings)
                 v0 = image_style_embeddings[reference_image]
                 distances = {}
                 for k,v in image_style_embeddings.items():
@@ -111,6 +106,7 @@ if st.sidebar.button('Search in Embedding Space'):
                       ax[i].imshow(images[img[0]])
                       ax[i].set_axis_off()
 
+                st.pyplot(f,use_container_width=True)
                 plt.show()
     
 
