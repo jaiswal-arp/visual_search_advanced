@@ -39,7 +39,34 @@ with open('model_vae.pkl', 'rb') as file:
 x_grid = loadeddata['x_grid']
 embeddigns = loadeddata['embeddigns']
 
-if st.sidebar.button('Generate '):
+st.title("Visual Search Using Variational Autoeconders")
+if st.sidebar.button('Load Images/Data'):
+    # Define the text labels
+    fashion_mnist_labels = ["T-shirt/top",  # index 0
+                        "Trouser",      # index 1
+                        "Pullover",     # index 2 
+                        "Dress",        # index 3 
+                        "Coat",         # index 4
+                        "Sandal",       # index 5
+                        "Shirt",        # index 6 
+                        "Sneaker",      # index 7 
+                        "Bag",          # index 8 
+                        "Ankle boot"]   # index 9
+
+    fig, ax = plt.subplots(10, 11, figsize=(12, 10), gridspec_kw={'width_ratios': [2] + [1]*10})
+    img_idx = 0
+    for i in range(10):
+        ax[i, 0].axis('off')
+        ax[i, 0].text(0.5, 0.5, fashion_mnist_labels[i])
+    
+        class_indexes = [k for k, n in enumerate(y_train) if n == i]
+        for j in range(10):
+            ax[i, j+1].imshow(1 - train_images[class_indexes[j], :])
+            ax[i, j+1].axis('off')
+    st.pyplot(fig,use_container_width=True)
+
+
+if st.sidebar.button('Generate Manifold Visualization'):
 
     #
     # Create a grid over the semantic space
