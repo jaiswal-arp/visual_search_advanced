@@ -13,3 +13,4 @@ tensorflow
 tabulate
 streamlit
 tensorflow-probability
+seaborn
