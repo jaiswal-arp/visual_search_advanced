@@ -39,7 +39,7 @@ with open('style_embeddings.pkl', 'rb') as file:
 st.sidebar.title('Image Search By an Artistic Style')
 if st.sidebar.button('Run'):
         try:    
-            st.write("Images Available")             
+            st.title("Images Available")             
             n_col = 8
             n_row = int(len(images) / n_col)
             
