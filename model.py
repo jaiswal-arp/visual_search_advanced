@@ -19,7 +19,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 from sklearn import manifold
 import scipy as sc
 
-image_paths = glob.glob('/workspaces/Assignment03/Assets/Images/*.jpg')
+image_paths = glob.glob('./Assets/Images/*.jpg')
 print(f'Found [{len(image_paths)}] images')
 
 images = {}
