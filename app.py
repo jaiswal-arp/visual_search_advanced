@@ -29,10 +29,14 @@ for image_path in image_paths:
     image = cv2.resize(image, (200, 200))
     images[ntpath.basename(image_path)] = image      
 
+
+
 # Load the style embeddings from the pickle file
 with open('style_embeddings.pkl', 'rb') as file:
     image_style_embeddings = pickle.load(file)
 
+
+st.sidebar.title('Image Search By an Artistic Style')
 if st.sidebar.button('Run'):
         try:    
             st.write("Images Available")             
@@ -83,13 +87,24 @@ if st.sidebar.button('Generate'):
     except Exception as e:
           st.error(f"Error executing the query: {str(e)}")  
 
+image_name_mapping = {
+    "Cubism Style 1": "s_cubism-02.jpg",
+    "Cubism Style 2": "s_cubism-05.jpg",
+    "Cubism Style 3": "s_cubism-08.jpg",
 
+    "Impressionist Style 1": "s_impressionist-02.jpg",
+    "Impressionist Style 2": "s_impressionist-07.jpg",
+    "Impressionist Style 3": "s_impressionist-11.jpg"
+    
+}
 
+selected_image =st.sidebar.selectbox("Select the image which will be used as a reference",list(image_name_mapping.keys()) )
 
 if st.sidebar.button('Search in Embedding Space'):
     try: 
-            st.write("Images below are matched Using the reference style/image")             
-            def search_by_style(image_style_embeddings, images, reference_image, max_results=10):
+                       
+            def search_by_style(image_style_embeddings, images, selected_image, max_results=10):
+                reference_image = image_name_mapping[selected_image]
                 v0 = image_style_embeddings[reference_image]
                 distances = {}
                 for k,v in image_style_embeddings.items():
@@ -97,11 +112,10 @@ if st.sidebar.button('Search in Embedding Space'):
                   distances[k] = d
 
                 sorted_neighbors = sorted(distances.items(), key=lambda x: x[1], reverse=False)
-    
-                # Create a Streamlit app
+
                 st.title("Image Search by Style")
 
-                f, ax = plt.subplots(1, max_results, figsize=(16, 8))
+                f, ax = plt.subplots(1, max_results, figsize=(20, 10))
                 for i, img in enumerate(sorted_neighbors[:max_results]):
                       ax[i].imshow(images[img[0]])
                       ax[i].set_axis_off()
@@ -111,8 +125,7 @@ if st.sidebar.button('Search in Embedding Space'):
     
 
                # images mostly match the reference style, although not perfectly
-            search_by_style(image_style_embeddings, images, 's_impressionist-02.jpg')
-            search_by_style(image_style_embeddings, images, 's_cubism-02.jpg')
+            search_by_style(image_style_embeddings, images, selected_image)
             
     except Exception as e:
         st.error(f"Error executing the query: {str(e)}")
