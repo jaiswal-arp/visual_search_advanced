@@ -12,6 +12,9 @@ import numpy as np
 embedding_model = tf.keras.models.load_model('embedding_model.h5')
 
 tsne_embeddings = np.load('tsne_embeddings.npy')
+image_embeddings = np.load('image_embeddings.npy')
+
+transfer_model = tf.keras.models.load_model('transfer_model.h5')
 
 files = os.listdir('./images_original')
 file_dict = {index: filename for index, filename in enumerate(files)}
@@ -56,4 +59,35 @@ else:
         st.image(image, caption = "Uploaded image", use_column_width = True)
 
         image = tf.keras.preprocessing.image.img_to_array(image)
+        image = tf.image.resize(image, (224, 224))
+        image = tf.expand_dims(image, 0)
+        pred = transfer_model.predict(image)
+        
+        classes = ['Dress','Hat','Longsleeve','Shoes','T-Shirt']
+        index_of_1 = np.argmax(pred)
+        predicted_class = classes[int(index_of_1)]
+
+        st.write("### Predicted value is :blue[" + predicted_class + "]")
+
+        image_embedding = embedding_model.predict(image)
+
+        tsne = TSNE(n_components=2, init='pca', perplexity=20, random_state=0)
+        tsne_embeddings = tsne.fit_transform(np.vstack([image_embeddings, image_embedding]))
+
+        n_neighbors = st.number_input("Enter number of similar images to select", min_value = 1, max_value = 5)
+        base_embedding = tsne_embeddings[-1]
+        distances = {i:distance.euclidean(base_embedding, embedding) for i,embedding in enumerate(tsne_embeddings)}
+
+        nearest_neighbor_indices = np.argsort(list(distances.values()))[:n_neighbors + 1]
+
+        nearest_neighbor_distances = []
+
+        for i in nearest_neighbor_indices:
+            nearest_neighbor_distances.append(distances[i])
+
+        image_paths = [f'./images_original/{file_dict[i]}' for i in nearest_neighbor_indices]
+
+        st.write("## Similar Images")
+        for i in range(1, len(image_paths)):
+            st.image(image_paths[i], width = 300)
         
