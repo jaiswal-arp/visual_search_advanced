@@ -1,0 +1,16 @@
+altair
+numpy
+pandas
+pydeck
+streamlit
+tensorflow
+matplotlib
+opencv-python-headless
+scikit-learn
+scipy
+tqdm
+tensorflow
+tabulate
+streamlit
+tensorflow-probability
+seaborn
