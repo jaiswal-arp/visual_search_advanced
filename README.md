@@ -46,3 +46,26 @@ The use cases are as follows: <br>
       ├── model_vae.pkl                     # trained model pickle file 
       └── requirements.txt                  # relevant package requirements file      
 ```
+## How to run the application
+- Clone the repo to get all the source code on your machine
+
+```bash
+git clone https://github.com/AlgoDM-Fall2023-Team4/Assignment03.git
+```
+- All the code related to the streamlit is in the streamlit/ directory of the project
+
+- First, create a virtual environment, activate and install all requirements from the requirements.txt file present
+```bash
+python -m venv <virtual_environment_name>
+```
+```bash
+source <virtual_environment_name>/bin/activate
+```
+```bash
+pip install -r <path_to_requirements.txt>
+```
+- Run the application
+
+```bash
+streamlit run streamlit/main.py
+```
