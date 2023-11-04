@@ -9,14 +9,14 @@ from scipy.spatial import distance
 from PIL import Image
 import numpy as np
 
-embedding_model = tf.keras.models.load_model('Visual Similarity for Search/Assets/embedding_model.h5')
-transfer_model = tf.keras.models.load_model('Visual Similarity for Search/Assets/transfer_model.h5')
+embedding_model = tf.keras.models.load_model('Visual_Similarity_for_Search/Assets/embedding_model.h5')
+transfer_model = tf.keras.models.load_model('Visual_Similarity_for_Search/Assets/transfer_model.h5')
 
-tsne_embeddings = np.load('Visual Similarity for Search/Assets/tsne_embeddings.npy')
-image_embeddings = np.load('Visual Similarity for Search/Assets/image_embeddings.npy')
+tsne_embeddings = np.load('Visual_Similarity_for_Search/Assets/tsne_embeddings.npy')
+image_embeddings = np.load('Visual_Similarity_for_Search/Assets/image_embeddings.npy')
 
 
-files = os.listdir('Visual Similarity for Search/Assets/images_original')
+files = os.listdir('Visual_Similarity_for_Search/Assets/images_original')
 file_dict = {index: filename for index, filename in enumerate(files)}
 
 dropdown = ['None']
@@ -47,7 +47,7 @@ if not selected_value == 'None':
     for i in nearest_neighbor_indices:
         nearest_neighbor_distances.append(distances[i])
 
-    image_paths = [f'Visual Similarity for Search/Assets/images_original/{file_dict[i]}' for i in nearest_neighbor_indices]
+    image_paths = [f'Visual_Similarity_for_Search/Assets/images_original/{file_dict[i]}' for i in nearest_neighbor_indices]
 
     st.write("## Base Image")
     st.image(image_paths[0], width = 300)
@@ -89,7 +89,7 @@ else:
         for i in nearest_neighbor_indices:
             nearest_neighbor_distances.append(distances[i])
 
-        image_paths = [f'Visual Similarity for Search/Assets/images_original/{file_dict[i]}' for i in nearest_neighbor_indices]
+        image_paths = [f'Visual_Similarity_for_Search/Assets/images_original/{file_dict[i]}' for i in nearest_neighbor_indices]
 
         st.write("## Similar Images")
         for i in range(1, len(image_paths)):
