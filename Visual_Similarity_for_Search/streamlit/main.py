@@ -9,11 +9,11 @@ from scipy.spatial import distance
 from PIL import Image
 import numpy as np
 
-embedding_model = tf.keras.models.load_model('Visual Similarity for Search/Assets/embedding_model.h5/Assets/embedding_model.h5')
-transfer_model = tf.keras.models.load_model('Visual Similarity for Search/Assets/embedding_model.h5/Assets/transfer_model.h5')
+embedding_model = tf.keras.models.load_model('Visual Similarity for Search/Assets/embedding_model.h5')
+transfer_model = tf.keras.models.load_model('Visual Similarity for Search/Assets/transfer_model.h5')
 
-tsne_embeddings = np.load('Visual Similarity for Search/Assets/embedding_model.h5/Assets/tsne_embeddings.npy')
-image_embeddings = np.load('Visual Similarity for Search/Assets/embedding_model.h5/Assets/image_embeddings.npy')
+tsne_embeddings = np.load('Visual Similarity for Search/Assets/tsne_embeddings.npy')
+image_embeddings = np.load('Visual Similarity for Search/Assets/image_embeddings.npy')
 
 
 files = os.listdir('Visual Similarity for Search/Assets/images_original')
