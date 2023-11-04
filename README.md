@@ -1,7 +1,3 @@
-# Assignment03
-
-
-
 
 ----- 
 > [Live Application link]<br>
