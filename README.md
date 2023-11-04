@@ -21,20 +21,29 @@
 ## Objective
 This application aims comprehensive guide to our innovative models and techniques designed to enhance visual search capabilities.
 We used 3 different Visual Search Models to train data and based on certain key factors we are finding the images.<br>
-The use cases are as follows : <br>
+The use cases are as follows: <br>
 1. Neural Style Transfer for Image Search
-2. Variational Autoencoder for Embedding Learning
-3. Visual Search Models for Object Retrieval
+2. Visual Search Models for Object Retrieval
+3. Variational Autoencoder for Embedding Learning
 
 ## Project Structure
 ```
-  ├── Assets                          # ipynb files
-  │   ├── Images
-  │── requirements.txt                  # relevant package requirements file for main
-  ├── app.py                            # model1 streamlit application
-  ├── roi.py
-      ├── pcs.py
-      ├── clv.py
-      ├── forecast_anomaly_detection.py                      
-      └── roi.py                        
+  ├── Neural Style Transfer for Image Search
+      ├── Assets                          
+          ├── Images
+      ├── requirements.txt                  # relevant package requirements file
+      ├── app.py                            # model1 streamlit application
+      ├── model.py                          # model code
+      ├── style_embeddings.pkl              # trained model pickle file 
+  │── Visual Search Models for Object Retrieval
+      ├──
+      ├── requirements.txt
+      ├── 
+   Model                            # model1 streamlit application
+  ├── Variational Autoencoder for Embedding Learning
+      ├── streamlitapp3.py                  # model3 streamlit application    
+      ├── model3.py                         # model code
+      ├── query-example-2.pdf               # query pdf        
+      ├── model_vae.pkl                     # trained model pickle file 
+      └── requirements.txt                  # relevant package requirements file      
 ```
