@@ -5,9 +5,9 @@
 
 ----- 
 > [Live Application link]<br>
-> [Model 1](https://algodm-fall2023-team4-assignment02-streamlitmain-l1iq34.streamlit.app](https://model1.streamlit.app/) <br>
+> [Model 1](https://algodm-fall2023-team4-assignment02-streamlitmain-l1iq34.streamlit.app) <br>
 > [Model 2](<>)) <br>
-> [Model 3](https://algodm-fall2023-team4-assignment02-streamlitmain-l1iq34.streamlit.app](https://model1.streamlit.app/)](https://model3.streamlit.app/) <br>
+> [Model 3](https://algodm-fall2023-team4-assignment02-streamlitmain-l1iq34.streamlit.app) <br>
 > [Codelab Slides](https://docs.google.com/document/d/1FCJP5iOxU3BNZ887LejyLGaVKoYz8_n02kPSXLtGNrs/edit?usp=sharing) <br>
 > [Application Demo/Presentation](<>)
 
