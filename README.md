@@ -2,10 +2,10 @@
 ----- 
 > [Live Application link]<br>
 > [Model 1](https://algodm-fall2023-team4-assignment02-streamlitmain-l1iq34.streamlit.app) <br>
-> [Model 2](https://drive.google.com/drive/folders/1VJkW1CzJYtQMVyzfoMO9Ta0kdAgatWyE?usp=sharing) <br>
+> [Model 2]() <br>
 > [Model 3](https://algodm-fall2023-team4-assignment02-streamlitmain-l1iq34.streamlit.app) <br>
 > [Codelab Slides](https://codelabs-preview.appspot.com/?file_id=1FCJP5iOxU3BNZ887LejyLGaVKoYz8_n02kPSXLtGNrs/edit?addon_store#0) <br>
-> [Application Demo/Presentation](<>)
+> [Application Demo/Presentation](https://drive.google.com/drive/folders/1VJkW1CzJYtQMVyzfoMO9Ta0kdAgatWyE?usp=sharing)
 
 ----- 
 ## Index
