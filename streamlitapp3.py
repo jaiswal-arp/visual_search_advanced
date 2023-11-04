@@ -42,6 +42,7 @@ embeddigns = loadeddata['embeddigns']
 st.title("Visual Search Using Variational Autoeconders")
 if st.sidebar.button('Load Images/Data'):
     # Define the text labels
+    st.write("Images Used")
     fashion_mnist_labels = ["T-shirt/top",  # index 0
                         "Trouser",      # index 1
                         "Pullover",     # index 2 
@@ -67,7 +68,7 @@ if st.sidebar.button('Load Images/Data'):
 
 
 if st.sidebar.button('Generate Manifold Visualization'):
-
+    st.write("Manifold Visualization")
     #
     # Create a grid over the semantic space
     #
@@ -90,7 +91,9 @@ if st.sidebar.button('Generate Manifold Visualization'):
     st.pyplot(fig, use_container_width=True)
 
 
+
 if st.sidebar.button('Find Similar Images'):
+    st.write("Similar Images for the Queried Image")
     query_image_id = 15
     k = 6
 
