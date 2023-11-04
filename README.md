@@ -29,18 +29,17 @@ The use cases are as follows: <br>
 ## Project Structure
 ```
   ├── Neural Style Transfer for Image Search
-      ├── Assets                          
-          ├── Images
-      ├── requirements.txt                  # relevant package requirements file
-      ├── app.py                            # model1 streamlit application
-      ├── model.py                          # model code
-      ├── style_embeddings.pkl              # trained model pickle file 
+  │    ├── Assets                          
+  │        ├── Images
+  │    ├── requirements.txt                  # relevant package requirements file
+  │    ├── app.py                            # model1 streamlit application
+  │    ├── model.py                          # model code
+  │    └──  style_embeddings.pkl              # trained model pickle file 
   │── Visual Search Models for Object Retrieval
-      ├──
-      ├── requirements.txt
-      ├── 
-   Model                            # model1 streamlit application
-  ├── Variational Autoencoder for Embedding Learning
+  │    ├──
+  │    ├── requirements.txt
+  │    └──  
+  └── Variational Autoencoder for Embedding Learning
       ├── streamlitapp3.py                  # model3 streamlit application    
       ├── model3.py                         # model code
       ├── query-example-2.pdf               # query pdf        
