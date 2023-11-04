@@ -32,9 +32,16 @@ The use cases are as follows: <br>
   │    ├── model.py                          # model code
   │    └──  style_embeddings.pkl              # trained model pickle file 
   │── Visual Search Models for Object Retrieval
-  │    ├──
-  │    ├── requirements.txt
-  │    └──  
+  │    ├── Assets
+  │    │     ├── images_original
+  │    │     ├── images.csv
+  │    │     ├── transfer_model.h5
+  │    │     ├── embedding_model.h5
+  │    │     ├── image_embeddings.npy
+  │    │     └── tsne_embeddings.npy
+  │    ├── Streamlit
+             └── main.py
+  │    └── requirements.txt
   └── Variational Autoencoder for Embedding Learning
       ├── streamlitapp3.py                  # model3 streamlit application    
       ├── model3.py                         # model code
