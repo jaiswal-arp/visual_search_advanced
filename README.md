@@ -2,7 +2,7 @@
 ----- 
 > [Live Application link]<br>
 > [Model 1](https://model1.streamlit.app/) <br>
-> [Model 2]() <br>
+> [Model 2](https://assignment01-h4ugrolrf7dai9gljje8px.streamlit.app/) <br>
 > [Model 3](https://model3.streamlit.app/) <br>
 > [Codelab Slides](https://codelabs-preview.appspot.com/?file_id=1FCJP5iOxU3BNZ887LejyLGaVKoYz8_n02kPSXLtGNrs/edit?addon_store#0) <br>
 > [Application Demo/Presentation](https://drive.google.com/drive/folders/1VJkW1CzJYtQMVyzfoMO9Ta0kdAgatWyE?usp=sharing)
